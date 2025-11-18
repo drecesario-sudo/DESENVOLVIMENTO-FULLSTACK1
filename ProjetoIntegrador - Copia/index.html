@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loja de Informática - Demo</title>
+ <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="wrap top">
+      <div class="brand">
+        <div class="logo">IT</div>
+        <div>
+          <div style="font-weight:700">Loja de Informática</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.85)">Produtos de informática — demo</div>
+        </div>
+      </div>
+
+      <div class="search" style="max-width:560px">
+        <input id="search" placeholder="Buscar produtos, ex: SSD NVMe, teclado..." />
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <button id="openCart" class="cart-btn">Carrinho (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <main>
+      <aside>
+        <div class="filter-group">
+          <label>Categoria</label>
+          <div class="categories" id="categories"></div>
+        </div>
+
+        <div class="filter-group">
+          <label>Ordenar</label>
+          <select id="sort" style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6e9ef">
+            <option value="default">Recomendados</option>
+            <option value="price-asc">Menor preço</option>
+            <option value="price-desc">Maior preço</option>
+            <option value="name">Nome (A‑Z)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Sobre</label>
+          <p class="small">Esta é uma demo de uma loja de informática. Não há integração com pagamentos — o checkout aqui é fictício.</p>
+        </div>
+      </aside>
+
+      <section>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <h2 style="margin:0">Produtos</h2>
+          <div class="small">Mostrando <span id="shownCount">0</span> produtos</div>
+        </div>
+
+        <div class="products" id="productGrid"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Cart drawer (hidden by default) -->
+  <div id="cartDrawer" style="display:none" class="drawer">
+    <div class="head">
+      <strong>Carrinho</strong>
+      <button id="closeCart" style="background:transparent;border:0;cursor:pointer">Fechar</button>
+    </div>
+    <div class="list" id="cartList"></div>
+    <div class="checkout">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <div class="small">Total:</div>
+        <div id="cartTotal" style="font-weight:800">R$ 0,00</div>
+      </div>
+      <button id="checkoutBtn">Finalizar compra (demo)</button>
+    </div>
+  </div>
+
+  <script src="Pagina.js"></script>
+</body>
+</html>

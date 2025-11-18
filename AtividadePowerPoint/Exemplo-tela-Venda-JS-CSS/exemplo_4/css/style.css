@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Titulo */
+h1{
+    padding: 25px;
+    width: 100%;
+    background-color: rgb(224, 128, 90);
+    text-align: center;
+}
+tr{
+    padding: 10%;
+    
+}
+body{
+    padding: 1%;
+    font-family: 'Arial', sans-serif;
+    background-color: rgba(205, 207, 107, 0.349);
+}
+table{
+    background-color: rgb(224, 128, 90);
+    width: 100%;
+    border-collapse: collapse;
+}
+td input{
+    width: 90%;
+    padding: 0%;
+    border: block;
+}
+th{
+    padding: 10px;
+}
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+/* tamanho dos numeros */
+td input{
+    width: 100%;
+    font-size: 15px; 
+    padding: 10px;
+    align-content: center;
+}
+
+/* botão Adicionar */
+td input[type="button"]{
+    background-color: rgb(83, 104, 199);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 6px 2px;
+    cursor: pointer;
+}
+/* botão selecionar produto */
+td select{
+    width: 100%;
+    padding: 10px;
+    font-size: 11px;
+    text-align: center;
+    border: 1px solid rgb(14, 1, 1);
+    font-size: medium;
+}
+/* barra de nomes que esta em Azul */
+th{
+    background-color: rgb(83, 104, 199);
+    color: rgb(255, 255, 255);
+}
+label{
+    font-size: 20px;
+}
+/* tamanho forma de pagamento,cliente,total venda  */
+select{
+    width: 80%;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid rgb(14, 1, 1);
+    
+}
+/* tamanho data de venda */
+input{
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid rgb(14, 1, 1);    
+}
+
+#container {
+    position:inherit;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 90px;
+    margin: auto;
+    box-shadow: 0px 0px 10px black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.row {
+    clear: both;
+  }
+  
+.column-3 {    
+      width: 22%;      
+      display: inline-flex;
+      height: 30px;
+  }
+  

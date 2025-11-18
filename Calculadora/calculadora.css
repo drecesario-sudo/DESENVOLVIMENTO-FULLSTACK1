@@ -1,0 +1,137 @@
+
+/*
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+}
+
+:root{
+    --cor-caqui: #e0d8b0;
+}
+
+*{
+   background-color: var(--cor-caqui)
+}
+
+#contadores, #corDeFundo{
+    display: flex;
+    flex-direction: column;
+    max-width: 120px;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid;
+}
+
+#calculadora{
+    border-radius: 25px;
+     display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid;
+    text-align: center;
+    align-items: center;
+}
+
+#calculadora input{
+    max-width: 200px;
+}
+
+#calculadora button{
+    background-color: green ;
+    border: 10px;
+    font-family: Comic Sans MS;
+    border-radius: 10px;
+    display: block;
+    block-size: 50px;
+}
+
+input{
+    text-align: center;
+}
+    */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button.limpar {
+    background-color: #e74c3c;
+}
+
+button.limpar:hover {
+    background-color: #c0392b;
+}
+
+#resposta {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}

@@ -1,0 +1,59 @@
+*{
+    margin:0%
+}
+
+header{
+    height: 10vh;
+    width: 100vw;
+    
+}
+
+main{
+    height: 80vh;
+    width: 100vw;
+    font-family: Papyrus; fantasy;
+}
+
+section{
+    height: 100%;
+    width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+#codigo{
+    max-width: 22%
+}
+
+
+#nome{
+    max-width: 50%;
+}
+
+#cep{
+    max-width: 11%;
+}
+
+#genero{
+    max-width: 17%;
+}
+
+
+#corfav{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    max-width: 20%;
+
+}
+
+#profissao{
+    max-width: 10%;
+}
+
+footer{
+    height: 10vh;

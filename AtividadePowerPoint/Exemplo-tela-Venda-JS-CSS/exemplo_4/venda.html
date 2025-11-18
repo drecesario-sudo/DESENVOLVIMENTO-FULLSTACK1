@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda</title>
+
+    <!--Carrega a biblioteca-->    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Implementação da programação-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+           
+
+        });
+
+        
+
+    </script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+      
+       <style>
+        .modal {
+                display: none; /* Oculto por padrão */
+                position: fixed; /* Posição fixa */
+                z-index: 1; /* Fica acima de outros elementos */
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto; /* Permite rolagem se o conteúdo for grande */
+                background-color: rgba(0,0,0,0.4); /* Cor de fundo semitransparente */
+            }
+
+            .modal-content {
+                background-color: #fefefe;
+                margin: 15% auto; /* Centraliza vertical e horizontalmente */
+                padding: 20px;
+                border: 1px solid #888;
+                width: 30%; /* Largura do modal */
+                height: 320px;
+            }
+
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+       </style>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <h1>Página de Vendas</h1>
+  <p>Os melhores produtos disponiveis</p> 
+</div>
+
+
+<div id="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="cliente" class="form-label">Cliente</label>
+                <select class="form-control"   id="cliente" name="cliente">
+                <option value="1">Maria</option>
+                <option value="2">José</option>
+                <option value="3">João</option>            
+            </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="tbdata" class="form-label">Data Venda</label> 
+                <input class="form-control" type="date" id="tbdata" name="tbdata">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="fpagamento" class="form-label">Forma de Pagamento</label>
+                  <select class="form-control"  id="fpagamento" name="fpagamento">
+                <option value="1">Pix</option>
+                <option value="2">Cartão Débito</option>
+                <option value="3">Cartão Crédito</option>     
+            </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="tbtotal" class="form-label">Total da Venda</label> 
+                <input class="form-control" type="text" id="tbtotal" name="tbtotal" readonly>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="produtos" class="form-label">Produto</label> 
+                <select id="produtos" name="produtos" class="form-control">
+                        <option value="1">Caixa de Som</option>
+                        <option value="2">Mouse</option>
+                        <option value="3">Teclado</option>
+                    </select>
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="tbquantidade" class="form-label">Quantidade</label>
+                <input type="text" id="tbquantidade" name="tbquantidade" class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="tbvrunitario" class="form-label">Vr. Unitário</label>
+                <input type="text" id="tbvrunitario" name="tbvrunitario" readonly class="form-control">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="tbvrtotalitem" class="form-label">Vr. Total</label>
+                <input type="text" id="tbvrtotalitem" name="tbvrtotalitem" readonly class="form-control">
+
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <label for="" class="form-label">Ações</label><br>
+                <input type="button" id="btadicionar" value="Adicionar" class="btn btn-primary">
+            </div>
+        </div>
+
+    </div>
+   
+
+
+ <div class="box box-primary">
+    <div class="box-header with-border">
+        <h4>Itens Comprados<h4>
+    </div>
+    <div class="box-body">
+  
+                
+                <table id="tbitens" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Vr Unitário</th>
+                            <th>Vr Total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+    </div>
+ </div>
+
+
+ <div class="box-footer">    
+    <input type="button" id="btnovo" value="Nova Venda" class="btn btn-success">
+    <input type="button" id="btcancelar" value="Cancelar Venda" class="btn btn-danger">
+    <input type="button" id="btsair" value="Sair" class="btn btn-primary">   
+    <button id="openModalBtn" class="btn btn-primary" >Pagamento</button> 
+</div>     
+
+
+</div>
+
+<!-- Tela de Pagamento com o Modal -->
+<div id="meuModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        
+            <div class="row">
+                <div class="col-md-12">
+                     <div class="form-group">
+                           <label for="tbtotvenda" class="form-label">Total Venda</label>
+                           <input type="text" id="tbtotvenda" name="tbtotvenda" readonly class="form-control">
+                        </div>
+                </div>           
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                     <div class="form-group">
+                           <label for="tbtotrecebido" class="form-label">Total Recebido</label>
+                           <input type="text" id="tbtotrecebido" name="tbtotvenda"  class="form-control">
+                        </div>
+                </div>           
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                     <div class="form-group">
+                           <label for="tbtottroco" class="form-label">Total Troco</label>
+                           <input type="text" id="tbtottroco" name="tbtotvenda"  class="form-control">
+                        </div>
+                </div>           
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                <input type="button" id="brpagamento" value="Pagamento" class="btn btn-success">
+                <input type="button" id="btcancela2" value="Cancelar" class="btn btn-danger">
+                </div>
+            </div>
+        
+
+
+    </div>
+</div>
+
+
+  
+
+  <!-- Script do Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script type="text/javascript">
+       
+
+  </script>
+
+ 
+</body>
+</html>
