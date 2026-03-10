@@ -1,0 +1,6 @@
+*.env 
+#ignorando Env
+
+node_modules/
+#ignorando node_modules
+
