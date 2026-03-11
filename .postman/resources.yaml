@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: 058a0d69-1ce3-4d5a-8279-33bc924994d1
+
+localResources:
+  collections:
+    - ..\BibliotecaEscolar_API_V1-Sala\docs\PostMan\API_Autores_Cidades_Token.postman_collection.json
