@@ -17,8 +17,10 @@ async function buscarEndereco()
                 document.getElementById('rua').value = dados.logradouro;
                 document.getElementById('bairro').value = dados.bairro;
                 document.getElementById('cidade').value = dados.localidade;
-                
+            }
 
+            else{
+                alert("CEP não foi encontrado");
             }
         }
     }
