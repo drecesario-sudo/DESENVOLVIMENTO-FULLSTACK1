@@ -3,14 +3,16 @@
 
 async function buscarEndereco()
 {
+    alert("Oi");
     const cep = document.getElementById("cep").value.replace(/\D/g, '');
 
     if(cep !== ""){
 
         const expressaovalidacao = /^[0-9] {8}$/;
-        if (expressaovalidacao.test(cep))
+        if (expressaovalidacao.test(cep)){
 
-            try{
+            try
+            {
                 const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json`)
                 const dados = await resposta.json();
                 if(!dados.erro)
@@ -24,9 +26,19 @@ async function buscarEndereco()
                     alert("CEP não foi encontrado");
                 }
             }
+            
             catch
-          {
-
-          }
+            {
+                alert("abrobinha")
+            }
+            
+        }       
+        else{
+            alert("oiee");
+        }
     }
+    
+    else {
+        alert("cep vazio");
+    }    
 }
