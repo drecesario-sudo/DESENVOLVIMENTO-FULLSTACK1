@@ -9,9 +9,9 @@ async function buscarEndereco()
 
         const expressaovalidacao = /^[0-9] {8}$/;
         if (expressaovalidacao.test(cep))
-            
+
             try{
-                const resposta = await fetch(`https://viacep.com/ws/${cep}/json`)
+                const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json`)
                 const dados = await resposta.json();
                 if(!dados.erro)
                 {
