@@ -9,19 +9,24 @@ async function buscarEndereco()
 
         const expressaovalidacao = /^[0-9] {8}$/;
         if (expressaovalidacao.test(cep))
-        {
-            const resposta = await fetch(`https://viacep.com/ws/${cep}/json`)
-            const dados = await resposta.json();
-            if(!dados.erro)
-            {
-                document.getElementById('rua').value = dados.logradouro;
-                document.getElementById('bairro').value = dados.bairro;
-                document.getElementById('cidade').value = dados.localidade;
+            
+            try{
+                const resposta = await fetch(`https://viacep.com/ws/${cep}/json`)
+                const dados = await resposta.json();
+                if(!dados.erro)
+                {
+                    document.getElementById('rua').value = dados.logradouro;
+                    document.getElementById('bairro').value = dados.bairro;
+                    document.getElementById('cidade').value = dados.localidade;
+                    document.getElementById('uf').value = dados.uf;
+                }
+                else{
+                    alert("CEP não foi encontrado");
+                }
             }
+            catch
+          {
 
-            else{
-                alert("CEP não foi encontrado");
-            }
-        }
+          }
     }
 }
