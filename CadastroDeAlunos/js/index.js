@@ -1,44 +1,31 @@
-// função para buscar o endereço automaticamente
-//  via API dos correios    
-
-async function buscarEndereco()
-{
-    alert("Oi");
+async function buscarEndereco() {
     const cep = document.getElementById("cep").value.replace(/\D/g, '');
 
-    if(cep !== ""){
+    if (cep !== "") {
 
-        const expressaovalidacao = /^[0-9] {8}$/;
-        if (expressaovalidacao.test(cep)){
+        const expressaovalidacao = /^[0-9]{8}$/;
 
-            try
-            {
-                const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json`)
+        if (expressaovalidacao.test(cep)) {
+
+            try {
+                const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json`);
                 const dados = await resposta.json();
-                if(!dados.erro)
-                {
+
+                if (!dados.erro) {
                     document.getElementById('rua').value = dados.logradouro;
                     document.getElementById('bairro').value = dados.bairro;
                     document.getElementById('cidade').value = dados.localidade;
                     document.getElementById('uf').value = dados.uf;
-                }
-                else{
+                } else {
                     alert("CEP não foi encontrado");
                 }
+
+            } catch {
+                alert("Erro ao buscar CEP");
             }
-            
-            catch
-            {
-                alert("abrobinha")
-            }
-            
-        }       
-        else{
-            alert("oiee");
+
+        } else {
+            alert("CEP inválido");
         }
     }
-    
-    else {
-        alert("cep vazio");
-    }    
 }
